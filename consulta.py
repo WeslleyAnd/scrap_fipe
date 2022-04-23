@@ -1,4 +1,11 @@
-a = int(input('informe o primeiro numero: '))
-b = int(input('informe o segundo numero: '))
-c = a + b
-print('o resultado da soma eh: ', c)
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
+import requests
+
+url = "https://veiculos.fipe.org.br"
+
+hdr = {'User-Agent': 'Mozilla/5.0'}
+req = Request(url,headers=hdr)
+page = urlopen(req)
+soup = BeautifulSoup(page)
+print(soup)
