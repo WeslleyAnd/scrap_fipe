@@ -1,7 +1,6 @@
 FROM python:3
-RUN pip install beautifulsoup4 
-RUN pip install requests
-WORKDIR /usr/src/app
+RUN pip install selenium
+RUN pip install webdriver-manager
+WORKDIR /app
 COPY . .
-CMD ["pip install beautifulsoup4", "consulta.py"]
 ENTRYPOINT [ "python3" ]
